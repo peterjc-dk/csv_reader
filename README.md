@@ -1,8 +1,14 @@
+# A sip of Elixir
+As part of a presentation about Elixir given at a Meetup in Copenhagen, this small command line app was used as a demo.
+
+## The Presentation
+A general overview of interesting features was  presented in a Prezi presentation available here [A sip of Elixir](http://prezi.com/t8zxmnn8xazc/?utm_campaign=share&utm_medium=copy)  
+ 
 # csv_reader
 
 **TODO: Add description**
 
-## Installation
+## Examble
 ```elixir
 defmodule CsvParser do
 
@@ -18,7 +24,7 @@ defmodule CsvParser do
   end
 end
 ```
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+If [available in Hex](https://hex.pm/docs/publish), The package can be installed as:
 
   1. Add csvReader to your list of dependencies in `mix.exs`:
 
