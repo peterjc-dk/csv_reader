@@ -6,7 +6,13 @@ A general overview of interesting features was  presented in a Prezi presentatio
  
 # csv_reader
 
-**TODO: Add description**
+## Download
+
+## Compile
+
+## Use 
+
+
 
 ## Examble
 ```elixir
@@ -28,13 +34,13 @@ If [available in Hex](https://hex.pm/docs/publish), The package can be installed
 
   1. Add csvReader to your list of dependencies in `mix.exs`:
 ```elixir
-        def deps do
-          [{:csvReader, "~> 0.0.1"}]
-        end
+  def deps do
+    [{:csvReader, "~> 0.0.1"}]
+  end
 ```
   2. Ensure csvReader is started before your application:
 ```elixir
-        def application do
-          [applications: [:csvReader]]
-        end
+  def application do
+    [applications: [:csvReader]]
+  end
 ```
