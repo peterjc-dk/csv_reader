@@ -51,10 +51,10 @@ defmodule CsvReader do
   defp do_process(:help) do
     IO.puts """
     Usage:
-    ./csv_reader < [file]
-    ./csv_reader [file]
-    ./csv_reader --file [file]
-    ./csv_reader --file [file] --filter [filter]
+      csv_reader < [file]
+      csv_reader [file]
+      csv_reader --file [file]
+      csv_reader --file [file] --filter [filter]
 
     Options:
     --help  Show this help message.

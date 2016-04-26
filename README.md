@@ -6,14 +6,34 @@ A general overview of interesting features was  presented in a Prezi presentatio
  
 # csv_reader
 
-## Download
-
-## Compile
-
+## Install
+```sh
+$ git clone https://github.com/peterjc-dk/csv_reader.git
+$ cd csv_reader
+$ mix deps.get 
+$ mix escript.build
+```
+Last step create a binary called csv_reader, this you can place where you prefer to have you bins.  
 ## Use 
+```sh
 
+$ csv_reader resources/hair_eye_color.csv --filter green
++-------+-------+--------+----+
+| black | green | male   | 3  |
+| brown | green | male   | 15 |
+| red   | green | male   | 7  |
+| blond | green | male   | 8  |
+| black | green | female | 2  |
+| brown | green | female | 14 |
+| red   | green | female | 7  |
+| blond | green | female | 8  |
++-------+-------+--------+----+
+```
+For a full list of options execute: 
+```sh
+$ csv_reader --help
 
-
+```
 # Under the hood
 
 ## Mix file 
@@ -95,7 +115,7 @@ defmodule CsvParser do
   end
 end
 ```
-## Test of CscParser
+## Test CsvParser
 ```elixir
 defmodule CsvParserTest do
   use ExUnit.Case
@@ -116,7 +136,7 @@ end
 If [available in Hex](https://hex.pm/docs/publish), The package can be installed as:
 
   1. Add csvReader to your list of dependencies in `mix.exs`:
-```elixir
+```Elixir
   def deps do
     [{:csvReader, "~> 0.0.1"}]
   end
