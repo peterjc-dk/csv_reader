@@ -1,10 +1,6 @@
-# A sip of Elixir
-As part of a presentation about Elixir given at a Meetup in Copenhagen, this small command line app was used as a demo.
-
-## The Presentation
-A general overview of interesting features was  presented in a Prezi presentation available here [A sip of Elixir](http://prezi.com/t8zxmnn8xazc/?utm_campaign=share&utm_medium=copy)  
- 
 # csv_reader
+This is a small demo command line application written in Elixir. It reads in a CSV file and shows it as a ASCII table on STDOUT.
+ 
 
 ## Install
 ```sh
