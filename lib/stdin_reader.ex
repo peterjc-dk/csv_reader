@@ -20,7 +20,7 @@ defmodule StdinReader do
 
   defp read(accumulator) do
     case IO.read(:stdio, :line) do
-      :eof -> accumulator
+      :eof -> Enum.reverse(accumulator)
       {:error, reason} -> IO.puts "Error: #{reason}"
       data ->
         read([data|accumulator])
