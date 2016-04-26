@@ -19,9 +19,9 @@ defmodule CsvParser do
   @doc """
   Filters a list of strings.
 
-  Followed by a Split list of strings, given a seperator.
+  Followed by a split on each of the strings, given a seperator.
 
-  Return list of list of strings
+  Finally returns a list of list of strings.
   ## Examples
 
       iex> CsvParser.parse_csv_stream(["a,b","c,b","e,f"],",", "b")
