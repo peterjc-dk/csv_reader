@@ -16,39 +16,39 @@ defmodule CsvReader do
     end
   end
 
-  defp parse_args(args) do
+  def parse_args(args) do
     options = OptionParser.parse(
       args, aliases: [h: :help, f: :file])
     case options do
-      {[file: file], _, _} -> [file, nil]
+      {[file: file], _, _} -> [file, :no_filter]
       {[file: file, filter: filter], _, _} -> [file, filter]
       {[filter: filter, file: file], _, _} -> [file, filter]
       {[filter: filter], [file], _} -> [file, filter]
       {[filter: filter], _, _} -> [:stdin, filter]
       {[help: true], _, _} -> :help
-      {_, [file], _} -> [file, nil]
-                   _ -> [:stdin, nil]
+      {_, [file], _} -> [file, :no_filter]
+                   _ -> [:stdin, :no_filter]
 
     end
   end
 
-  defp do_process([:stdin, filter]) do
+  def do_process([:stdin, filter]) do
     require StdinReader
     StdinReader.read_async
     |> to_csv_to_table(",", filter)
   end
 
-  defp do_process([file, filter]) do
+  def do_process([file, filter]) do
     File.stream!(file)
     |> to_csv_to_table(",", filter)
   end
 
-  defp do_process(:exit) do
+  def do_process(:exit) do
     IO.puts "Error executing csv_reader"
     do_process(:help)
   end
 
-  defp do_process(:help) do
+  def do_process(:help) do
     IO.puts """
     Usage:
       csv_reader < [file]
@@ -72,11 +72,11 @@ defmodule CsvReader do
     System.halt(0)
   end
 
-  defp to_csv_to_table(stream, seperator, filter) do
+  def to_csv_to_table(stream, seperator, filter) do
     require TableRex
     csv =
       cond do
-      filter == nil or  filter == :true ->
+      filter == :no_filter or  filter == :true ->
         CsvParser.parse_csv_stream(stream, seperator)
       true ->
         CsvParser.parse_csv_stream(stream, seperator, filter)

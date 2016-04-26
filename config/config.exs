@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :csvReader, key: :value
+#     config :csv_reader, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:csvReader, :key)
+#     Application.get_env(:csv_reader, :key)
 #
 # Or configure a 3rd-party app:
 #
